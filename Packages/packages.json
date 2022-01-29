@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Vapor",
+        "authors": ["Qutheory, LLC"],
+        "short_desc": "💧 A server-side Swift HTTP web framework.",
+        "repo": "https://github.com/vapor/vapor",
+        "homepage": "https://vapor.codes/",
+        "docs": "https://docs.vapor.codes/latest/",
+        "licenses": ["MIT"],
+        "categories": ["server"]
+    }, {
+        "title": "Swift Markdown",
+        "authors": ["Apple"],
+        "short_desc": "A Swift package for parsing, building, editing, and analyzing Markdown documents.",
+        "repo": "https://github.com/apple/swift-markdown",
+        "licenses": ["Apacha-2.0"],
+        "categories": ["parsing"]
+    }
+]

@@ -1,4 +1,3 @@
-Packages
 .build
 xcuserdata
 *.xcodeproj
@@ -6,4 +5,4 @@ DerivedData/
 .DS_Store
 db.sqlite
 .swiftpm
-
+[Pp]rivate

@@ -10,13 +10,15 @@ let package = Package(
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
         .package(url: "https://github.com/vapor/leaf.git", from: "4.0.0"),
+        // .package(url: "/Users/jonaseveraert/Documents/projects/firebase-swift/firestore-swift", from: "0.0.3-beta6")
     ],
     targets: [
         .target(
             name: "App",
             dependencies: [
                 .product(name: "Leaf", package: "leaf"),
-                .product(name: "Vapor", package: "vapor")
+                .product(name: "Vapor", package: "vapor"),
+                // .product(name: "FirestoreSwift", package: "firestore-swift")
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
