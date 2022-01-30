@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Markdown
 import RubyGateway
 
 func swift_greet() {
