@@ -6,15 +6,9 @@
 //
 
 import Foundation
-import RubyGateway
 
 func swift_greet() {
-    do {
-        let out = try Ruby.eval(ruby: "puts \'Hello world\'")
-        print(out)
-    } catch {
-        print(error)
-    }
+    
 }
 
 /*

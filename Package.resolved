@@ -29,15 +29,6 @@
         }
       },
       {
-        "package": "CRuby",
-        "repositoryURL": "https://github.com/johnfairh/CRuby",
-        "state": {
-          "branch": null,
-          "revision": "eb26e48106c60390a17f83c984ce3b26ccf9caf9",
-          "version": "2.0.0"
-        }
-      },
-      {
         "package": "leaf",
         "repositoryURL": "https://github.com/vapor/leaf.git",
         "state": {
@@ -71,15 +62,6 @@
           "branch": null,
           "revision": "5603b81ceb744b8318feab1e60943704977a866b",
           "version": "4.3.1"
-        }
-      },
-      {
-        "package": "RubyGateway",
-        "repositoryURL": "https://github.com/johnfairh/RubyGateway.git",
-        "state": {
-          "branch": null,
-          "revision": "e89588ddf3d34da669480414256d0defb3e1a3c3",
-          "version": "5.2.0"
         }
       },
       {
