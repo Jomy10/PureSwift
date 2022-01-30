@@ -12,5 +12,6 @@
   #for(author in authors):
     <p>#(author)</p>
   #endfor
+  <body>#import("body")</body>
 </body>
 </html>

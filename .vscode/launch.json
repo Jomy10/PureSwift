@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Run",
+            "program": "${workspaceFolder:pure-swift}/.build/debug/Run",
+            "args": [],
+            "cwd": "${workspaceFolder:pure-swift}",
+            "preLaunchTask": "swift: Build Debug Run"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release Run",
+            "program": "${workspaceFolder:pure-swift}/.build/release/Run",
+            "args": [],
+            "cwd": "${workspaceFolder:pure-swift}",
+            "preLaunchTask": "swift: Build Release Run"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Test pure-swift",
+            "program": "/Applications/Xcode.app/Contents/Developer/usr/bin/xctest",
+            "args": [
+                ".build/debug/pure-swiftPackageTests.xctest"
+            ],
+            "cwd": "${workspaceFolder:pure-swift}",
+            "preLaunchTask": "swift: Build All"
+        }
+    ]
+}

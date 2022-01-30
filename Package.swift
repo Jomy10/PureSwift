@@ -1,5 +1,5 @@
 // swift-tools-version:5.5
-import PackageDescription
+import PackageDescription 
 
 let package = Package(
     name: "pure-swift",
@@ -10,7 +10,8 @@ let package = Package(
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
         .package(url: "https://github.com/vapor/leaf.git", from: "4.0.0"),
-        // .package(url: "/Users/jonaseveraert/Documents/projects/firebase-swift/firestore-swift", from: "0.0.3-beta6")
+        .package(url: "ssh://git@github.com/apple/swift-markdown.git", .branch("main")),
+        .package(url: "https://github.com/johnfairh/RubyGateway.git", from: "5.2.0")
     ],
     targets: [
         .target(
@@ -18,7 +19,8 @@ let package = Package(
             dependencies: [
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "Vapor", package: "vapor"),
-                // .product(name: "FirestoreSwift", package: "firestore-swift")
+                .product(name: "Markdown", package: "swift-markdown"),
+                .product(name: "RubyGateway", package: "RubyGateway")
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

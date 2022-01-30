@@ -6,3 +6,4 @@ DerivedData/
 db.sqlite
 .swiftpm
 [Pp]rivate
+.vscode
