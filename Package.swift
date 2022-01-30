@@ -10,7 +10,6 @@ let package = Package(
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
         .package(url: "https://github.com/vapor/leaf.git", from: "4.0.0"),
-        .package(url: "ssh://git@github.com/apple/swift-markdown.git", .branch("main")),
         .package(url: "https://github.com/johnfairh/RubyGateway.git", from: "5.2.0")
     ],
     targets: [
@@ -19,7 +18,6 @@ let package = Package(
             dependencies: [
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "Vapor", package: "vapor"),
-                .product(name: "Markdown", package: "swift-markdown"),
                 .product(name: "RubyGateway", package: "RubyGateway")
             ],
             swiftSettings: [

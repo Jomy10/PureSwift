@@ -92,15 +92,6 @@
         }
       },
       {
-        "package": "cmark-gfm",
-        "repositoryURL": "https://github.com/apple/swift-cmark.git",
-        "state": {
-          "branch": "gfm",
-          "revision": "7fc530e5f12432db9768326ff74dc46de72a24e2",
-          "version": null
-        }
-      },
-      {
         "package": "swift-crypto",
         "repositoryURL": "https://github.com/apple/swift-crypto.git",
         "state": {
@@ -116,15 +107,6 @@
           "branch": null,
           "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
           "version": "1.4.2"
-        }
-      },
-      {
-        "package": "swift-markdown",
-        "repositoryURL": "ssh://git@github.com/apple/swift-markdown.git",
-        "state": {
-          "branch": "main",
-          "revision": "16ebb0ccea68c0009f550bd48cca1df8675685dc",
-          "version": null
         }
       },
       {
