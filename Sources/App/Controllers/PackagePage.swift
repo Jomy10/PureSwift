@@ -1,4 +1,6 @@
 import Vapor
+import MarkdownKit
+
 
 /// Package controller for `/packages/*`
 final class PackagePageController {
@@ -43,4 +45,10 @@ final class PackagePageController {
             return req.view.render("package_not_found", ["title": package_name])
         }
     }
+}
+
+/// Parses markdown to html using MarkdownKit
+func parse(readme: String) -> String {
+    let markdown = MarkdownParser.standard.parse(readme)
+    return HtmlGenerator().generate(doc: markdown)
 }
