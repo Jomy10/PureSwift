@@ -6,6 +6,7 @@ final class PackagePageController {
     func getPage(req: Request) throws -> EventLoopFuture<View> {
         let package_name = req.parameters.get("name")!
         
+        // Get json file contents 
         let file = try String(contentsOfFile: "Data/packages.json", encoding: String.Encoding.utf8)
         let decoder = JSONDecoder()
         let packages: [Package] = try decoder.decode([Package].self, from: file.data(using: String.Encoding.utf8)!)
@@ -15,6 +16,7 @@ final class PackagePageController {
             if package.desc == nil {
                 // Get readme from repo
                 if package.repo != nil {
+                    // Build readme link
                     var readme_link: String = package.repo!
                     readme_link = readme_link.replacingOccurrences(of: "https://github.com", with: "https://raw.githubusercontent.com")
                     readme_link.append("/master/README.md")
