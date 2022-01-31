@@ -1,0 +1,227 @@
+.readme {
+    max-width: 100%;
+    border-style: solid;
+    border-color: #0d1117;
+    border-radius: 25px;
+    background-color: rgb(36, 36, 36);
+    padding: 25px;
+    margin: -10px;
+    min-width: 0;
+}
+
+.readme img {
+    border-style: none;
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: #202020;
+}
+
+/*Code blocks = scrollable*/
+.readme pre {
+    overflow-x: auto;
+}
+
+/*Markdown style*/
+.readme a {
+    background-color: transparent;
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.readme a:active,
+.readme a:hover {
+    color: var(--swift-color)
+}
+
+.readme b,
+.readme strong {
+    font-weight: 600;
+}
+.readme h1,
+.readme h2,
+.readme h3,
+.readme h4,
+.readme h5,
+.readme h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.readme h1 {
+    padding-bottom: .3em;
+    font-size: 2.5em;
+    border-bottom: 1px solid var(--swift-color);
+}
+
+
+.readme h2 {
+    padding-bottom: .3em;
+    font-size: 1.75em;
+    border-bottom: 1px solid var(--swift-color);
+}
+
+.readme h3 {
+    font-size: 1.5em;
+}
+
+.readme h4 {
+    font-size: 1.25em;
+}
+
+.readme h5 {
+    font-size: 1em;
+}
+
+.readme h6 {
+    font-size: .875em;
+}
+
+.readme p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.readme blockquote {
+    margin: 0;
+    padding: 0 1em;
+    color: #8b949e;
+    border-left: .25em solid var(--swift-color);
+}
+
+.readme ul,
+.readme ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 2em;
+}
+
+.readme ol ol,
+.readme ul ol {
+    list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+    list-style-type: lower-alpha;
+}
+
+.readme sub,
+.readme sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.readme sub {
+    bottom: -0.25em;
+}
+.readme sup {
+    top: -0.5em;
+}
+
+.readme code,
+.readme pre {
+    font-family: monospace,monospace;
+    font-size: 1em;
+    background-color: #2e2e2e;
+}
+
+.readme pre {
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+.readme code {
+    font-family: "Jetbrains Mono", "Fira Code", ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+    font-size: 14px;
+}
+
+.readme hr {
+    box-sizing: content-box;
+    overflow: hidden;
+    background: transparent;
+    border-bottom: 1px solid #21262d;
+    height: .25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #30363d;
+    border: 0;
+}
+
+.readme [type=checkbox],
+.readme [type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.readme table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.readme td,
+.readme th {
+    padding: 0;
+}
+
+.markdown-body table th {
+    font-weight: 600;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+    padding: 6px 13px;
+    border: 1px solid #30363d;
+}
+
+.markdown-body table tr {
+    background-color: #0d1117;
+    border-top: 1px solid #21262d;
+}
+
+.markdown-body table tr:nth-child(2n) {
+    background-color: #161b22;
+}
+
+.markdown-body table img {
+    background-color: transparent;
+}
+
+.markdown-body img[align=right] {
+    padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+    padding-right: 20px;
+}
+
+.readme g-emoji {
+    font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1em;
+    font-style: normal !important;
+    font-weight: 400;
+    line-height: 1;
+    vertical-align: -0.075em;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body details {
+    margin-top: 0;
+    margin-bottom: 16px;
+}

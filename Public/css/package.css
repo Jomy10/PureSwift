@@ -1,0 +1,95 @@
+main {
+    margin-bottom: 50px; 
+}
+
+h1 {
+    font-size: 3em;
+    margin-left: 2.5%;
+}
+
+.content {
+    display: grid;
+    gap: 60px;
+    grid-template-columns: 1fr 200px;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+/*TODO: make sidebar more accesible on small screens*/
+@media only screen and (max-width: 600px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sidebar {
+    border-style: solid;
+    border-color: #0d1117;
+    border-radius: 25px;
+    background-color: rgb(36, 36, 36);
+    margin: -10px;
+    padding: 25px;
+    padding-top: 20px;
+    height: fit-content;
+}
+
+.sidebar h5 {
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.sidebar h6 {
+    font-size: 1em;
+    font-weight: 600;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-top: 25px;
+    border-bottom: 1px solid var(--swift-color);
+}
+
+.sidebar a {
+    color: #58a6ff;
+}
+
+.sidebar a:hover {
+    color: var(--swift-color)
+}
+
+.sidebar ul {
+    margin-top: 10px;
+    padding-left: 10px;
+    list-style-type: square;
+}
+
+.sidebar li:not(:last-child) {
+    padding-bottom: 6px;
+}
+
+/*Link icons*/
+.sidebar ul#links {
+    list-style: none;
+}
+
+.sidebar ul#links li::before  {
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -1em;
+}
+
+.sidebar ul#links li.github::before {
+    content: "\f09b";
+}
+
+.sidebar ul#links li.docs::before {
+    content: "\f02d";
+}
+
+.sidebar ul#links li.homepage::before {
+    content: "\f015";
+}
+
+.sidebar ul#links li a {
+    margin-left: 10px;
+}

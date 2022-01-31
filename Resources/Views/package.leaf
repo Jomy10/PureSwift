@@ -6,12 +6,81 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>#(title)</title>
+
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/markdown.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/package.css">
+  <style>
+  </style>
 </head>
 <body>
-  <h1>#(title)</h1>
-  #for(author in authors):
-    <p>#(author)</p>
-  #endfor
-  <body>#import("body")</body>
+  <!--Nav-->
+  <nav id="navbar" style="margin-top:25px;">
+    <a href="/">Browse</a>
+    <a href="/search">Search</a>
+  </nav>
+
+  <!--Package-->
+  <main>
+    <h1>#(title)</h1>
+    <div class="content">
+      <div class="readme">
+        #unsafeHTML(desc)
+      </div>
+      <div class="sidebar">
+        <!--Short Desc-->
+        #if(short_desc != nil):
+          <p>#(short_desc)</p>
+        #endif
+        <!--Authors-->
+        #if(authors != nil):
+          <h6>Authors</h6>
+          <ul>
+            #for(author in authors):
+              <li>#(author)</li>
+            #endfor
+          </ul>
+        #endif
+        <!--License-->
+        #if(license != nil):
+          <ul>
+            #for(lic in license):
+              <li style="list-style-type: square;">#(lic)</li>
+            #endfor
+          </ul>
+        #endif
+        <h6>Links</h6>
+        <ul id="links">
+          <!--Docs-->
+          #if(docs != nil):
+            <li class="docs"><a href="#(docs)">documentation</a></li>
+          #endif
+          <!--Homepage-->
+          #if(homepage != nil):
+            <li class="homepage"><a href="#(homepage)">homepage</a></li>
+          #endif
+          <!--Repository-->
+          #if(repo != nil):
+            <li class="github"><a href="#(repo)">repository</a></li>
+          #endif
+        </ul>
+        <!--Categories-->
+        #if(categories != nil):
+          <h6>Categories</h6>
+          <ul>
+            #for(cat in categories):
+              <li><a href="/category/#(cat)">#(cat)</a></li>
+            #endfor
+          </ul>
+        #endif
+        <!--Added time-->
+        #if(addedTime != nil):
+          <h6>Added on</h6>
+          <p>#(addedTime)</p>
+        #endif
+      </div>
+    </div>
+  </main>
 </body>
 </html>

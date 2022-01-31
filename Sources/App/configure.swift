@@ -1,6 +1,5 @@
 import Leaf
 import Vapor
-import JWTKit
 import Foundation
 
 /// The firebase token

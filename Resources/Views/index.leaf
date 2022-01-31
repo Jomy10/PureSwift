@@ -5,63 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pure Swift</title>
+  <link rel="stylesheet" href="/css/index.css">
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-    body, html {
-      margin: 0;
-      background: rgb(37, 37, 37);
-      font-family: "Monsterrat", sans-serif;
-      --swift-color: rgb(249, 84, 46);
-      --swift-gradient1: rgb(251, 176, 72);
-      --swift-gradient2: rgb(254, 53, 39);
-      color: white;
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-    main {
-      margin: 24px;
-      margin-top: 85px;
-    }
     div.intro {
       padding: 24px;
-    }
-
-    nav {
-      position: absolute;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      left: 50%;
-      width: 100%;
-      background: black;
-      padding: 16px;
-      margin-top: 16px;
-    }
-
-    nav a {
-      margin-left: 24px;
-      margin-right: 25px;
-      color: #f6f4e6;
-      text-decoration: none;
-      font-size: 1.2em;
-      /*text-transform: uppercase;*/
-      font-weight: 500;
-      display: inline-block;
-      -webkit-transition: all 0.2s ease-in-out;
-      transition: all 0.2s ease-in-out;
-
-      position: -webkit-sticky; /* Safari */
-      position: sticky;
-      top: 0;
-      
-      float: right;
-    }
-
-    nav a#nav-title {
-      float: left;
-    }
-
-    nav a:hover, nav a.active {
-      color: var(--swift-color);
     }
     
     .intro {
@@ -108,11 +55,14 @@
     .package {
       background: black;
       width: 100%;
-      height: 135px;
+      height: 155px;
       border-radius: 10px;
       display: inline-block;
       overflow: hidden;
       cursor: pointer;
+    }
+    .package p {
+      line-height: 1.3;
     }
     .package .content {
       padding: 15px;
