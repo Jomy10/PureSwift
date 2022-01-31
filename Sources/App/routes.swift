@@ -33,9 +33,10 @@ func routes(_ app: Application) throws {
     app.get("search") { req -> EventLoopFuture<View> in
         let search = try req.query.decode(Search.self)
         try search.retrieveResults()
-        return req.view.render("search", ["input": search.query])
+        return req.view.render("search", ["input": /*search.query*/ "not implemented"])
     }
     
+    /*
     app.get("exec") { req -> String in
         let task = Process()
         task.executableURL = URL(fileURLWithPath: "Sources/App/main")
@@ -55,6 +56,7 @@ func routes(_ app: Application) throws {
         print("ERROR:", error)
         return "E"
     }
+    */
 }
 
 /// Represents a search query
