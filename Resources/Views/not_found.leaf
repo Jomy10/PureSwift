@@ -4,18 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Package Not Found</title>
+  <title>Page not found</title>
   <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-  <!--Nav-->
-  <nav id="navbar" style="margin-top:25px;">
+  <nav id="navbar" style="margin-top: 25px;">
+    <!--a href="" id="nav-title">PureSwift</a-->
     <a href="/">Browse</a>
     <a href="/search">Search</a>
   </nav>
-  
-  <h1>
-    It looks like the package #(title) does not exist.
-  </h1>
+  <main>
+    <h1>404: Page not found</h1>
+  </main>
 </body>
 </html>
