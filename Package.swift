@@ -10,7 +10,7 @@ let package = Package(
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
         .package(url: "https://github.com/vapor/leaf.git", from: "4.0.0"),
-        .package(url: "https://github.com/objecthub/swift-markdownkit.git", from: "1.1.2")
+        .package(url: "https://github.com/objecthub/swift-markdownkit.git", from: "1.1.2"),
     ],
     targets: [
         .target(
@@ -18,7 +18,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "Vapor", package: "vapor"),
-                .product(name: "MarkdownKit", package: "swift-markdownkit")
+                .product(name: "MarkdownKit", package: "swift-markdownkit"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

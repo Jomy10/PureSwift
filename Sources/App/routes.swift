@@ -8,7 +8,7 @@ enum PureSwiftError: Error {
 }
 
 func routes(_ app: Application) throws {
-    /// Index
+    /// Index (browse)
     app.get { req -> EventLoopFuture<View> in
         // Get all packages
         let file = try String(contentsOfFile: "Data/packages.json", encoding: String.Encoding.utf8)
@@ -18,6 +18,7 @@ func routes(_ app: Application) throws {
         return req.view.render("index", ["packages": packages])
     }
 
+    /// Categories overvies
     app.get("category", ":category") { req -> EventLoopFuture<View> in 
         return req.view.render("not_found")
     }
@@ -25,5 +26,23 @@ func routes(_ app: Application) throws {
     /// Packages
     app.get("package", ":name") { req -> EventLoopFuture<View> in
         return try PackagePageController().getPage(req: req)
+    }
+
+    app.get("search") { req -> EventLoopFuture<View> in
+        let search = try req.query.decode(Search.self)
+        try search.retrieveResults()
+        return req.view.render("search", ["input": search.query])
+    }
+}
+
+struct Search: Content {
+    var query: String?
+}
+
+extension Search {
+    func retrieveResults() throws -> [Package]? {
+        
+
+        return nil
     }
 }

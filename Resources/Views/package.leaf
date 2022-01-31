@@ -44,6 +44,7 @@
         #endif
         <!--License-->
         #if(license != nil):
+          <h6>License</h6>
           <ul>
             #for(lic in license):
               <li style="list-style-type: square;">#(lic)</li>
