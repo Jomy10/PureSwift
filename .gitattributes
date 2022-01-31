@@ -1,1 +1,2 @@
 *.leaf linguist-language=Html
+Dockerfile linguist-vendored
