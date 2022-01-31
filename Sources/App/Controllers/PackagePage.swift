@@ -16,7 +16,6 @@ final class PackagePageController {
         let decoder = JSONDecoder()
         let packages: [Package] = try decoder.decode([Package].self, from: file.data(using: String.Encoding.utf8)!)
 
-        // return PackagePageController().getPage(req: req) 
         // Search package in JSON file
         if var package = packages.first(where: { $0.title == package_name }) {
             if package.desc == nil {
@@ -24,15 +23,12 @@ final class PackagePageController {
                 if package.repo != nil {
                     var readme_link: String = package.repo!
                     readme_link = readme_link.replacingOccurrences(of: "https://github.com", with: "https://raw.githubusercontent.com")
-                    // readme_link = readme_link?.replacingOccurrences(of: ".git", with: "")
                     readme_link.append("/master/README.md")
                     
                     // Get content from link and append to desc
                     let contents = try String(contentsOf: URL(string: readme_link)!)
                     
-                    // TODO: parse markdown using Apple's Swift Markdown
-                    // package.desc = parse_md(contents)
-                    // package.desc = (build html from markdown)
+                    // Build HTML
                     package.desc = parse(readme: contents)
                 }
             }
