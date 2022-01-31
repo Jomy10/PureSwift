@@ -35,6 +35,26 @@ func routes(_ app: Application) throws {
         try search.retrieveResults()
         return req.view.render("search", ["input": search.query])
     }
+    
+    app.get("exec") { req -> String in
+        let task = Process()
+        task.executableURL = URL(fileURLWithPath: "Sources/App/main")
+        let outputPipe = Pipe()
+        let errorPipe = Pipe()
+        task.standardOutput = outputPipe
+        task.standardError = errorPipe
+        try task.run()
+        
+        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+        
+        let output = String(decoding: outputData, as: UTF8.self)
+        let error = String(decoding: errorData, as: UTF8.self)
+        
+        print("OUTPUT:", output)
+        print("ERROR:", error)
+        return "E"
+    }
 }
 
 /// Represents a search query
