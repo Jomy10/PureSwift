@@ -1,5 +1,0 @@
-#extend("package"):
-  #export("body"):
-    <p>DESCRIPTION</p>
-  #endexport
-#endextend
