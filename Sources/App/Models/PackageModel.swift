@@ -1,7 +1,7 @@
 import Foundation
 import Vapor
 
-/// Represents a package  as defined in `Data/packages.json`
+/// Represents a package  as defined in `Public/Data/packages.json`
 struct Package: Content {
     /// Title of the packagge
     var title: String

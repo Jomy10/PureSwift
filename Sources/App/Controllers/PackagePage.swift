@@ -11,7 +11,7 @@ final class PackagePageController {
         req.logger.info("\(package_name)")
         
         // Get json file contents 
-        let file = try String(contentsOfFile: "Data/packages.json", encoding: String.Encoding.utf8)
+        let file = try String(contentsOfFile: "Public/Data/packages.json", encoding: String.Encoding.utf8)
         let decoder = JSONDecoder()
         let packages: [Package] = try decoder.decode([Package].self, from: file.data(using: String.Encoding.utf8)!)
         req.logger.info("Got packages: \(packages)")

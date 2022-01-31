@@ -12,7 +12,7 @@ func routes(_ app: Application) throws {
     /// Index (browse)
     app.get { req -> EventLoopFuture<View> in
         // Get all packages
-        let file = try String(contentsOfFile: "Data/packages.json", encoding: String.Encoding.utf8)
+        let file = try String(contentsOfFile: "Public/Data/packages.json", encoding: String.Encoding.utf8)
         let decoder = JSONDecoder()
         let packages: [Package] = try decoder.decode([Package].self, from: file.data(using: String.Encoding.utf8)!) 
 
