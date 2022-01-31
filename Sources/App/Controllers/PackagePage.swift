@@ -1,6 +1,8 @@
 import Vapor
 import MarkdownKit
-
+#if os(Linux)
+import FoundationNetworking
+#endif
 
 /// Package controller for `/packages/*`
 final class PackagePageController {
@@ -21,23 +23,17 @@ final class PackagePageController {
             if package.desc == nil {
                 // Get readme from repo
                 if package.repo != nil {
-                    req.logger.info("Parsing readme link")
                     // Build readme link
                     var readme_link: String = package.repo!
                     readme_link = readme_link.replacingOccurrences(of: "https://github.com", with: "https://raw.githubusercontent.com")
                     readme_link.append("/master/README.md")
 
-                    req.logger.info("Readme link parser.")
                     
                     // Get content from link and append to desc
-                    req.logger.info("Reading readme...")
-                    let contents = try String(contentsOf: URL(string: readme_link) ?? URL(string: "LINK TO NOT FOUND MARKDOWN")!)
-                    req.logger.info("Readme contents: \(contents)")
+                    let contents = try String(contentsOf: URL(string: readme_link) ?? URL(string: "Public/NOTFOUND.md")!)
 
                     // Build HTML
-                    req.logger.info("Building html...")
                     package.desc = parse(readme: contents)
-                    req.logger.info("HTML build: \(String(describing: package.desc))")
                 }
             }
             return req.view.render("package", package)
