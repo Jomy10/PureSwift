@@ -1,14 +1,8 @@
 import Vapor
 
-/*
+/// Package controller for `/packages/*`
 final class PackagePageController {
-    func getPage(req: Request) throws -> EventLoopFuture<View> {
-        return try PackageHTML().render(with: req)
-    }
-}
-*/
-
-final class PackagePageController {
+    /// Package page
     func getPage(req: Request) throws -> EventLoopFuture<View> {
         let package_name = req.parameters.get("name")!
         

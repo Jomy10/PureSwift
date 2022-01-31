@@ -1,6 +1,7 @@
 import Foundation
 import Vapor
 
+/// Represents a package  as defined in `Data/packages.json`
 struct Package: Content {
     /// Title of the packagge
     var title: String

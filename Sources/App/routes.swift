@@ -2,6 +2,7 @@ import Vapor
 import NIO
 import Foundation
 
+/// Errors for this site
 enum PureSwiftError: Error {
     case Database(String)
     case DataDecode(String)
@@ -28,6 +29,7 @@ func routes(_ app: Application) throws {
         return try PackagePageController().getPage(req: req)
     }
 
+    /// Search
     app.get("search") { req -> EventLoopFuture<View> in
         let search = try req.query.decode(Search.self)
         try search.retrieveResults()
@@ -35,11 +37,13 @@ func routes(_ app: Application) throws {
     }
 }
 
+/// Represents a search query
 struct Search: Content {
     var query: String?
 }
 
 extension Search {
+    /// Retrieve results from the query
     func retrieveResults() throws -> [Package]? {
         
 
