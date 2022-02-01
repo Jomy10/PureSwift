@@ -22,5 +22,12 @@
         "repo": "https://github.com/objecthub/swift-markdownkit",
         "license": ["Apache-2.0"],
         "categories": ["Parsers"]
+    }, {
+        "title": "SwiftFoundation",
+        "authors": ["PureSwift"],
+        "short_desc": "Cross-Platform, Protocol-Oriented Programming base library to complement the Swift Standard Library. (Pure Swift, Supports Linux)",
+        "repo": "https://github.com/PureSwift/SwiftFoundation",
+        "license": ["MIT"],
+        "categories": ["Foundation"]
     }
 ]

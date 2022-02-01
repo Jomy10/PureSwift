@@ -1,5 +1,4 @@
 import Vapor
-import MarkdownKit
 #if os(Linux)
 import FoundationNetworking
 #endif
@@ -43,8 +42,3 @@ final class PackagePageController {
     }
 }
 
-/// Parses markdown to html using MarkdownKit
-func parse(readme: String) -> String {
-    let markdown = MarkdownParser.standard.parse(readme)
-    return HtmlGenerator().generate(doc: markdown)
-}

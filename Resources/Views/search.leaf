@@ -9,6 +9,11 @@
 <body>
   <!--TODO-->
   <input type="text" id="">
-  #(input)
+  #for(package in packages):
+    <h2>#(package.title)</h2>
+    #for(output in package.authors):
+      <p>#(output)</p>
+    #endfor
+  #endfor
 </body>
 </html>

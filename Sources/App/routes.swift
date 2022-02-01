@@ -32,8 +32,8 @@ func routes(_ app: Application) throws {
     /// Search
     app.get("search") { req -> EventLoopFuture<View> in
         let search = try req.query.decode(Search.self)
-        try search.retrieveResults()
-        return req.view.render("search", ["input": /*search.query*/ "not implemented"])
+        let results = try search.retrieveResults()
+        return req.view.render("search", ["packages": results])
     }
     
     /*
@@ -67,8 +67,31 @@ struct Search: Content {
 extension Search {
     /// Retrieve results from the query
     func retrieveResults() throws -> [Package]? {
-        
+        // #7 
+        let task = Process()
+        #if os(macOS)
+        task.executableURL = URL(fileURLWithPath: "Sources/App/bin/jql_mac")
+        #elseif os(Linux)
+        task.executableURL = URL(fileURLWithPath: "Sources/App/bin/jql_lin")
+        #endif
 
-        return nil
+        let outputPipe = Pipe()
+        let errorPipe = Pipe()
+
+        task.standardOutput = outputPipe
+        task.standardError = errorPipe
+
+        try task.run()
+
+        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+        
+        let output = String(decoding: outputData, as: UTF8.self)
+        let error = String(decoding: errorData, as: UTF8.self)
+
+        print("STDERR:", error)
+        print("STDOUT:", output)
+
+        return [Package(title: "STDOUT", authors: [output]), Package(title: "STDERR", authors: [error])]
     }
 }

@@ -14,5 +14,8 @@
     }, {
         "title": "Parsers",
         "desc": "Parser implementations for specific formats or languages."
+    }, {
+        "title": "Foundation",
+        "desc": "Libraries implementing base features."
     }
 ]

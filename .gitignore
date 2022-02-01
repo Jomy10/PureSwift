@@ -1,10 +1,22 @@
-.build
+# VSCode
+.vscode
+
+# Swift and XCode
 xcuserdata
 *.xcodeproj
 DerivedData/
+
+.swiftpm
+Package.resolved
+
+.build
+
+# Other
+db.sqlite
+
+[Pp]rivate
+deploy_using_docker.md
+
+# MacOS
 .DS_Store
 **/.DS_Store*
-db.sqlite
-.swiftpm
-[Pp]rivate
-.vscode
