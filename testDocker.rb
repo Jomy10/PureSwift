@@ -4,9 +4,9 @@
 # to make sure everything is working on Linux
 
 # Build app
-exec "docker compose build"
+system "docker compose build"
 
 puts "Docker image build."
-sleep 2
+puts "==="
 #  Run app
-exec "docker compose up app"
+system "docker compose up app"

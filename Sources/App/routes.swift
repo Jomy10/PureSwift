@@ -31,8 +31,13 @@ func routes(_ app: Application) throws {
 
     /// Search
     app.get("search") { req -> EventLoopFuture<View> in
-        let search = try req.query.decode(Search.self)
-        let results = try search.retrieveResults()
+        let results: [Package]
+        do {
+            let search = try req.query.decode(Search.self)
+            results = try search.retrieveResults()
+        } catch(let error) {
+            results = [Package(title: "Error", authors: ["Something went wrong: \(error)"])]
+        }
         return req.view.render("search", ["packages": results])
     }
     
@@ -70,9 +75,9 @@ extension Search {
         // #7 
         let task = Process()
         #if os(macOS)
-        task.executableURL = URL(fileURLWithPath: "Sources/App/bin/jql_mac")
+        task.executableURL = URL(fileURLWithPath: "Public/bin/jql_mac")
         #elseif os(Linux)
-        task.executableURL = URL(fileURLWithPath: "Sources/App/bin/jql_lin")
+        task.executableURL = URL(fileURLWithPath: "Public/bin/jql_lin")
         #endif
 
         let outputPipe = Pipe()
