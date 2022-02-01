@@ -9,4 +9,4 @@ system "docker compose build"
 puts "Docker image build."
 puts "==="
 #  Run app
-system "docker compose up app"
+exec "docker compose up app"

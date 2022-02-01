@@ -13,7 +13,7 @@
         "authors": ["Apple"],
         "short_desc": "A Swift package for parsing, building, editing, and analyzing Markdown documents.",
         "repo": "https://github.com/apple/swift-markdown",
-        "license": ["Apacha-2.0"],
+        "license": ["Apache-2.0"],
         "categories": ["Parsers"]
     }, {
         "title": "MarkdownKit",
@@ -29,5 +29,46 @@
         "repo": "https://github.com/PureSwift/SwiftFoundation",
         "license": ["MIT"],
         "categories": ["Foundation"]
+    }, {
+        "title:": "Tokamak",
+        "authors": ["Digital Signal Limited", "Tokamak Contributors"],
+        "short_desc": "SwiftUI-compatible framework for building browser apps with WebAssembly and native apps for other platforms",
+        "repo": "https://github.com/TokamakUI/Tokamak",
+        "license": ["Apache-2.0"],
+        "categories": ["Web", "WASM"]
+    }, {
+        "title": "TokamakVapor",
+        "authors": ["Digital Signal Limited", "Tokamak Contributors"],
+        "short_desc": "Static Tokamak/SwiftUI views renderer for Vapor",
+        "repo": "https://github.com/TokamakUI/TokamakVapor",
+        "license": ["Apache-2.0"],
+        "categories": ["Web", "WASM"] 
+    }, {
+        "title": "Publish",
+        "authors": ["John Sundell", "36+ contributes"],
+        "short_desc": "A static site generator for Swift developers ",
+        "repo": "https://github.com/johnsundell/Publish",
+        "license": ["MIT"],
+        "categories": ["Web"] 
+    }, {
+        "title": "Swift Wasm",
+        "authors": ["Swift Wasm Contributors"],
+        "short_desc": "WebAssembly support for the Swift programming language",
+        "repo": "https://github.com/swiftwasm/swift",
+        "license": ["Apache-2.0"],
+        "categories": ["Web", "WASM"]
+    }, {
+        "title": "DOMKit",
+        "authors": ["Jed Fox", "Max Desiatov"],
+        "short_desc": "Access the DOM from Swift! (Very much WIP)",
+        "repo": "https://github.com/swiftwasm/DOMKit",
+        "categories": ["Web", "WASM"]
+    }, {
+        "title": "JavaScriptKit",
+        "authors": ["Swift Wasm Contributors"],
+        "short_desc": "Swift framework to interact with JavaScript through WebAssembly. ",
+        "repo": "https://github.com/swiftwasm/JavaScriptKit",
+        "license": ["MIT"],
+        "categories": ["Web", "WASM"]
     }
 ]
