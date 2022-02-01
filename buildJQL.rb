@@ -15,7 +15,6 @@ Dir.chdir("jql") do
     system "docker run --rm -it -v `pwd`:/app rust/linux-aarch64"
 end
 
-
 FileUtils.cp("jql/target/x86_64-apple-darwin/release/jql", "Sources/App/bin/jql_mac")
 
 FileUtils.cp("jql/target/aarch64-unknown-linux-gnu/release/jql", "Sources/App/bin/jql_lin")

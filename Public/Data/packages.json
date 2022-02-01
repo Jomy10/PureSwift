@@ -30,7 +30,7 @@
         "license": ["MIT"],
         "categories": ["Foundation"]
     }, {
-        "title:": "Tokamak",
+        "title": "Tokamak",
         "authors": ["Digital Signal Limited", "Tokamak Contributors"],
         "short_desc": "SwiftUI-compatible framework for building browser apps with WebAssembly and native apps for other platforms",
         "repo": "https://github.com/TokamakUI/Tokamak",
