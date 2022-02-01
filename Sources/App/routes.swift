@@ -66,7 +66,7 @@ struct Search: Content {
 
 extension Search {
     /// Retrieve results from the query
-    func retrieveResults() throws -> [Package]? {
+    func retrieveResults() throws -> [Package] {
         // #7 
         let task = Process()
         #if os(macOS)
