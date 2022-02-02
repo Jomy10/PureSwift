@@ -70,5 +70,12 @@
         "repo": "https://github.com/swiftwasm/JavaScriptKit",
         "license": ["MIT"],
         "categories": ["Web", "WASM"]
+    }, {
+        "title": "Plot",
+        "authors": ["John Sundell"],
+        "short_desc": "A DSL for writing type-safe HTML, XML and RSS in Swift.",
+        "repo": "https://github.com/johnsundell/plot",
+        "license": ["MIT"],
+        "categories": ["Web"]
     }
 ]

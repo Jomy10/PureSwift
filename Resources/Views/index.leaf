@@ -73,6 +73,12 @@
         p.textContent = p.textContent.replace(/\W*\s(\S)*$/, '...');
       }
     });
+
+    window.onscroll = () => { onScroll() };
+    var navbar = document.getElementById("navbar")
+    const onScroll() {
+
+    }
   </script>
 </body>
 </html>
