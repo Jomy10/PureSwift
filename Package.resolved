@@ -92,15 +92,6 @@
         }
       },
       {
-        "package": "MarkdownKit",
-        "repositoryURL": "https://github.com/Jomy10/swift-markdownkit.git",
-        "state": {
-          "branch": "linux",
-          "revision": "a81a4ad801559bb128f7987a1dc056a1592021f3",
-          "version": null
-        }
-      },
-      {
         "package": "swift-metrics",
         "repositoryURL": "https://github.com/apple/swift-metrics.git",
         "state": {
