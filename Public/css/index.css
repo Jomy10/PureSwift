@@ -28,7 +28,12 @@ nav {
 }
 
 .sticky {
+    position: fixed;
     top: 10px;
+}
+
+.index-nav {
+    position: absolute;
 }
 
 nav a {
@@ -43,8 +48,6 @@ nav a {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
     top: 0;
     
     float: right;

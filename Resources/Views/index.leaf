@@ -42,7 +42,7 @@
     </p>
   </div>
   
-  <nav id="navbar">
+  <nav id="navbar" class="index-nav">
     <!--a href="" id="nav-title">PureSwift</a-->
     <a class="active">Browse</a>
     <a href="search">Search</a>
@@ -75,9 +75,18 @@
     });
 
     window.onscroll = () => { onScroll() };
-    var navbar = document.getElementById("navbar")
-    const onScroll() {
-
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop - 25;
+    const onScroll = () => {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+        navbar.classList.remove("index-nav");
+        console.log("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+        navbar.classList.add("index-nav");
+        console.log("Not sticky")
+      }
     }
   </script>
 </body>
