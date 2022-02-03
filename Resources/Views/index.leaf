@@ -7,6 +7,7 @@
   <title>Pure Swift</title>
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/package_summary.css">
+  <script src="/scripts/elipsis.js"></script>
   <style>
     div.intro {
       padding: 24px;
@@ -30,7 +31,7 @@
   <div class="intro">
     <div style="height: fit-content;display: flex;align-items: center;">
       <img src="images/swift-logo.png" alt="Swift" style="float: left; height: 100px;">
-      <h1>Pure Swift</h1>
+      <h1 style="padding-top: 15px; padding-left: 10px;">Pure Swift</h1>
     </div>
 
     <p class="intro">
@@ -53,7 +54,8 @@
         <div class="package">
           <div class="content" onclick="location.href='/package/#(package.title)';">
             <h3>#(package.title)</h3>
-            <p>#(package.short_desc)</p>
+            <p class="content-text">#(package.short_desc)</p>
+            <p class="saved-text" style="opacity: 0%;">#(package.short_desc)</p>
           </div>
         </div>
       #endfor
@@ -61,31 +63,23 @@
 
   <script>
     // Adds an elipsis ('...') when the description of a package overflows
-    const packages = document.querySelectorAll('.package');
-    Array.prototype.forEach.call(packages, (package) => {
-      let content = package.querySelector('.content');
-      let p = content.querySelector('p');
-      let h3 = content.querySelector('h3');
-      let packageH = package.clientHeight;
-      const padding = 15;
-      let height = packageH - h3.clientHeight - padding * 3;
-      while (p.offsetHeight > height) {
-        p.textContent = p.textContent.replace(/\W*\s(\S)*$/, '...');
-      }
-    });
+    elipsis()
+    window.onresize = () => {
+      console.log('resize');
+      elipsis();
+    };
 
+    // Sets the sidebar to stick to the top if it reaches it
     window.onscroll = () => { onScroll() };
     var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop - 25;
+    var sticky = navbar.offsetTop - 24;
     const onScroll = () => {
       if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky");
         navbar.classList.remove("index-nav");
-        console.log("sticky")
       } else {
         navbar.classList.remove("sticky");
         navbar.classList.add("index-nav");
-        console.log("Not sticky")
       }
     }
   </script>
