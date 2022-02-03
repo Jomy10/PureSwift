@@ -8,12 +8,32 @@
 </head>
 <body>
   <!--TODO-->
-  <input type="text" id="">
+  <input type="text" id="input">
+  <button id="btn">Search</button>
   #for(package in packages):
     <h2>#(package.title)</h2>
     #for(output in package.authors):
       <p>#(output)</p>
     #endfor
   #endfor
+
+  <!--Open Websocket Connection-->
+  <script src="/scripts/search.js"></script>
+  <script>
+    let input = document.querySelector('#input');
+    let btn = document.querySelector('#btn');
+    openSocket((socket) => {
+      socket.onmessage = (event) => {
+        console.log(event.data);
+      }
+
+      btn.addEventListener('click', () => {
+        let query = {
+          "query": input.value
+        };
+        socket.send(JSON.stringify(query))
+      })
+    });
+  </script>
 </body>
 </html>

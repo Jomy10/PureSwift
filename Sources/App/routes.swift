@@ -2,6 +2,8 @@ import Vapor
 import NIO
 import Foundation
 
+import Fuse
+
 /// Errors for this site
 enum PureSwiftError: Error {
     case Database(String)
@@ -38,30 +40,43 @@ func routes(_ app: Application) throws {
         } catch(let error) {
             results = [Package(title: "Error", authors: ["Something went wrong: \(error)"])]
         }
+        // let encoder = JSONEncoder()
+        // let rep = Reply(results: [])
+        // let results = Response(body: .init(stream: { writer in
+        //     for _ in 0..<1000 {
+        //         let buffer = try! encoder.encodeAsByteBuffer(rep, allocator: app.allocator)
+        //         writer.write(.buffer(buffer))
+        //     }
+        // }))
         return req.view.render("search", ["packages": results])
     }
-    
-    /*
-    app.get("exec") { req -> String in
-        let task = Process()
-        task.executableURL = URL(fileURLWithPath: "Sources/App/main")
-        let outputPipe = Pipe()
-        let errorPipe = Pipe()
-        task.standardOutput = outputPipe
-        task.standardError = errorPipe
-        try task.run()
-        
-        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
-        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
-        
-        let output = String(decoding: outputData, as: UTF8.self)
-        let error = String(decoding: errorData, as: UTF8.self)
-        
-        print("OUTPUT:", output)
-        print("ERROR:", error)
-        return "E"
+
+    app.webSocket("echo") { req, ws in 
+        print("[WS.search] Opened.");
+
+        let decoder = JSONDecoder();
+        ws.onText { ws, s in
+            do {
+                let decoded = try decoder.decode(Search.self, from: s.data(using: .utf8)!);
+                // TODO: search + return 
+            } catch {
+                print(error)
+                // TODO: send error back
+            }
+        }
+
+        ws.send("Hello world!")
+
+        ws.onClose.whenComplete { _ in
+            print("[WS.search] Closed.")
+        } 
     }
-    */
+}
+
+
+
+struct Reply: Content {
+    var results: [String]
 }
 
 /// Represents a search query
@@ -73,30 +88,11 @@ extension Search {
     /// Retrieve results from the query
     func retrieveResults() throws -> [Package] {
         // #7 
-        let task = Process()
-        #if os(macOS)
-        task.executableURL = URL(fileURLWithPath: "Public/bin/jql_mac")
-        #elseif os(Linux)
-        task.executableURL = URL(fileURLWithPath: "Public/bin/jql_lin")
-        #endif
+        let fuse = Fuse()
+        let result = fuse.search("od mn war", in: "Old Man's  War")
+        print(result?.score)
+        print(result?.ranges)
 
-        let outputPipe = Pipe()
-        let errorPipe = Pipe()
-
-        task.standardOutput = outputPipe
-        task.standardError = errorPipe
-
-        try task.run()
-
-        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
-        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
-        
-        let output = String(decoding: outputData, as: UTF8.self)
-        let error = String(decoding: errorData, as: UTF8.self)
-
-        print("STDERR:", error)
-        print("STDOUT:", output)
-
-        return [Package(title: "STDOUT", authors: [output]), Package(title: "STDERR", authors: [error])]
+        return []
     }
 }

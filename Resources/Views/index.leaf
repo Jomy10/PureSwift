@@ -70,18 +70,7 @@
     };
 
     // Sets the sidebar to stick to the top if it reaches it
-    window.onscroll = () => { onScroll() };
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop - 24;
-    const onScroll = () => {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky");
-        navbar.classList.remove("index-nav");
-      } else {
-        navbar.classList.remove("sticky");
-        navbar.classList.add("index-nav");
-      }
-    }
   </script>
+  <script src="/scripts/stickyNav.js"></script>
 </body>
 </html>
