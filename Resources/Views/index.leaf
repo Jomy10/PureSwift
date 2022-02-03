@@ -28,7 +28,7 @@
 </head>
 <body>
   <div class="intro">
-    <div style="height: fit-content;">
+    <div style="height: fit-content;display: flex;align-items: center;">
       <img src="images/swift-logo.png" alt="Swift" style="float: left; height: 100px;">
       <h1>Pure Swift</h1>
     </div>
