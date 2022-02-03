@@ -6,3 +6,6 @@ A website listing packages written in pure Swift, or work in pure Swift (e.g. wo
 [Visit the website](https://pureswift.herokuapp.com)
 
 **Still largely WIP**
+
+## Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
