@@ -1,4 +1,4 @@
-*This code of conduct is a [contributor covenant coc](https://www.contributor-covenant.org/)*
+*This code of conduct is a copy of [contributor covenant COC](https://www.contributor-covenant.org/)*
 
 # Contributor Covenant Code of Conduct
 

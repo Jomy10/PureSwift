@@ -10,6 +10,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
         .package(url: "https://github.com/vapor/leaf.git", from: "4.0.0"),
         .package(url: "https://github.com/objecthub/swift-markdownkit.git", .branch("master")),
+        .package(url: "https://github.com/krisk/fuse-swift.git", from: "1.4.0")
     ],
     targets: [
         .target(
@@ -18,6 +19,7 @@ let package = Package(
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "MarkdownKit", package: "swift-markdownkit"),
+                .product(name: "Fuse", package: "fuse-swift")
             ],
             swiftSettings: [
                 .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))

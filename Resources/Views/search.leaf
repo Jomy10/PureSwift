@@ -4,16 +4,105 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
   <title>Search</title>
+  <style>
+    .package {
+      padding: 25px;
+      border-bottom: 3px solid var(--swift-color);
+      transition: 0.24s ease;
+    }
+    .package:first-child {
+      border-top: 3px solid var(--swift-color);
+    }
+    .package:hover {
+      transform: translate(-10px, -10px);
+      cursor: pointer;
+    }
+    /*highlghting*/
+    .h {
+      color: var(--swift-color);
+    }
+    .package-title {
+      font-size: 1.75rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 100px auto;
+      width: 100%;
+    }
+
+    #btn,
+    #category,
+    #input {
+      padding: 10px;
+      font-size: 2rem;
+      margin: 10px
+    }
+    /*TODO: style better*/
+    #input {
+      border-radius: 10px;
+      border: 3px solid black;
+    }
+  </style>
 </head>
 <body>
-  <!--TODO-->
-  <input type="text" id="">
-  #for(package in packages):
-    <h2>#(package.title)</h2>
-    #for(output in package.authors):
-      <p>#(output)</p>
-    #endfor
-  #endfor
+  <!--Nav-->
+  <nav id="navbar" style="margin-top:25px;">
+    <a href="/">Browse</a>
+    <a class="active">Search</a>
+  </nav>
+
+  <!--Search bar-->
+  <div class="search-bar">
+    <input type="text" id="input">
+    <select name="Category" id="category">
+      <option value="all">all</option>
+      <!--TODO-->
+      <!--option value="wasm">WASM</option>
+      <option value="other">other</option-->
+    </select>
+    <button id="btn">Search</button>
+  </div>
+
+  <!--Results-->
+  <main>
+    <div class="results">
+
+      <div id="0">
+        <!--End element-->
+      </div>
+    </div>
+  </main>
+
+  <!--Open Websocket Connection-->
+  <script src="/scripts/search.js"></script>
+  <script>
+    let input = document.querySelector('#input');
+    let category = document.querySelector('#category');
+    let btn = document.querySelector('#btn');
+    openSocket((socket) => {
+      socket.onmessage = (event) => {
+        let { result, pos, link } = addResult(event.data);
+        console.log(pos)
+        if (pos.end) {
+          console.log("end")
+          // Append result to end
+          addElement(result.title, result.desc, pos.id, true, link);
+        } else {
+          // Append before element with id `id`
+          addElement(result.title, result.desc, pos.id, false, link);
+        }
+      }
+      
+      // searches on every key press, needs monitoring if the server can keep up!
+      document.querySelector("#input").addEventListener("keydown", () => { search(socket, input.value, category.value); });
+      btn.addEventListener('click', () => { search(socket, input.value, category.value); });
+    });
+  </script>
 </body>
 </html>
