@@ -7,9 +7,25 @@
 //
 
 import MarkdownKit
+import Foundation
 
 // Parses markdown to html using MarkdownKit
-func parse(readme: String) -> String {
+func parse(readme: String, link: String) -> String {
     let markdown = MarkdownParser.standard.parse(readme)
-    return HtmlGenerator().generate(doc: markdown)
+    let html = HtmlGenerator().generate(doc: markdown)
+    // Replace image links
+    do {
+        let hrefRegex = try NSRegularExpression(pattern: "src=\"([a-zA-Z.]*)\"")
+        let range = NSMakeRange(0, html.count)
+        let modString = hrefRegex.stringByReplacingMatches(
+            in: html, 
+            options: [], 
+            range: range, 
+            withTemplate: "src=\"\(link)/master/$1\""
+        )
+        return modString
+    } catch {
+        return html
+    }
+    return html
 }

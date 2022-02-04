@@ -25,6 +25,7 @@ final class PackagePageController {
                     // Build readme link
                     var readme_link: String = package.repo!
                     readme_link = readme_link.replacingOccurrences(of: "https://github.com", with: "https://raw.githubusercontent.com")
+                    let raw_user_content = readme_link
                     readme_link.append("/master/README.md")
 
                     
@@ -32,7 +33,7 @@ final class PackagePageController {
                     let contents = try String(contentsOf: URL(string: readme_link) ?? URL(string: "Public/NOTFOUND.md")!)
 
                     // Build HTML
-                    package.desc = parse(readme: contents)
+                    package.desc = parse(readme: contents, link: raw_user_content)
                 }
             }
             return req.view.render("package", package)
