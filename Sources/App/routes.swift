@@ -40,8 +40,8 @@ func routes(_ app: Application) throws {
         print("[WS.search] Opened connection.");
 
         let decoder = JSONDecoder();
-        let encoder = JSONEncoder();
-
+         
+        // Asynchronous return
         if #available(macOS 12, *) {
             ws.onText { ws, s in
                 do {
@@ -61,7 +61,6 @@ func routes(_ app: Application) throws {
             }
         } else {
             print("Unsupported version");
-            // Fallback on earlier versions
         }
 
         ws.onClose.whenComplete { _ in
