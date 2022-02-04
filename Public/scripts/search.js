@@ -1,7 +1,8 @@
 
 const openSocket = (callback) => {
-    let url = "ws://pureswift.herokuap.com/search_socket"
-    let websocket = new WebSocket(url/*, protocols*/);
+    // let url = "ws://localhost:8080/search_socket" // Debug
+    let url = "ws://pureswift.herokuapp.com/search_socket"
+    let websocket = new WebSocket(url, "echo-protocol");
     
     websocket.onopen = (event) => {
         callback(websocket);

@@ -27,5 +27,4 @@ func parse(readme: String, link: String) -> String {
     } catch {
         return html
     }
-    return html
 }
