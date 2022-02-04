@@ -33,21 +33,6 @@ func routes(_ app: Application) throws {
 
     /// Search
     app.get("search") { req -> EventLoopFuture<View> in
-        // let results: [Package]
-        // do {
-        //     let search = try req.query.decode(Search.self)
-        //     results = try search.retrieveResults()
-        // } catch(let error) {
-        //     results = [Package(title: "Error", authors: ["Something went wrong: \(error)"])]
-        // }
-        // let encoder = JSONEncoder()
-        // let rep = Reply(results: [])
-        // let results = Response(body: .init(stream: { writer in
-        //     for _ in 0..<1000 {
-        //         let buffer = try! encoder.encodeAsByteBuffer(rep, allocator: app.allocator)
-        //         writer.write(.buffer(buffer))
-        //     }
-        // }))
         return req.view.render("search")
     }
 
