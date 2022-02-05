@@ -1,24 +1,9 @@
-[
-    {
-        "title": "Algorithms",
-        "desc": "Implementations of core algorithms such as sorting, searching, ..."
-    }, {
-        "title": "API Bindinds",
-        "desc": "Wrappers around a specific api. Includes HTTP APIs"
-    }, {
-        "title": "Web",
-        "desc": "Packages for building (front-end) web apps"
-    }, {
-        "title": "Server",
-        "desc": "Packages meant for back-end, server-side programming."
-    }, {
-        "title": "Parsers",
-        "desc": "Parser implementations for specific formats or languages."
-    }, {
-        "title": "Foundation",
-        "desc": "Libraries implementing base features."
-    }, {
-        "title": "WASM",
-        "desc": "Packages that have something to do with Web Assembly"
-    }
-]
+{
+    "Algorithms": {"desc": "Implementations of core algorithms such as sorting, searching, ..."},
+    "API Bindings": {"desc": "Wrappers around a specific api. Includes HTTP APIs"},
+    "Web": {"desc": "Packages for building (front-end) web apps"},
+    "Server": {"desc": "Packages meant for back-end, server-side programming."},
+    "Parsers": {"desc": "Parser implementations for specific formats or languages."},
+    "Foundation": {"desc": "Libraries implementing base features."},
+    "WASM": {"desc": "Packages that have something to do with Web Assembly"}
+}
