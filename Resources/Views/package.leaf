@@ -87,6 +87,8 @@
       let code = pre.querySelector('code');
       code.innerHTML = code.innerHTML.replace(/</, "&lt;");
       code.innerHTML = code.innerHTML.replace(/>/, "&gt;");
+      // Replace all inside of spans (prism)
+      
       console.log(code.innerHTML)
     });
   </script>
