@@ -56,10 +56,11 @@
           <div class="content" onclick="location.href='/package/#(package.title)';">
             <h3>#(package.title)</h3>
             <p class="content-text">#(package.short_desc)</p>
-            <p class="saved-text" style="opacity: 0%;">#(package.short_desc)</p><!--Content-text is overwritten with elipsis, while saved-text contains the text so that it can be used on resize-->
+            <p class="saved-text" style="opacity: 0%;z-index: -1;position: absolute;">#(package.short_desc)</p><!--Content-text is overwritten with elipsis, while saved-text contains the text so that it can be used on resize-->
             <div class="categories">
+              <!--TODO: fix link-->
               #for(category in package.categories):
-                <div class="category">
+                <div class="category" onclick="location.href='/category/#(category)';">
                   <p>#(category)</p>
                 </div>
               #endfor

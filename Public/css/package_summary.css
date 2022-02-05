@@ -27,7 +27,7 @@
 .package {
     background: black;
     width: 100%;
-    height: 155px;
+    height: 170px;
     border-radius: 10px;
     display: inline-block;
     overflow: hidden;
@@ -35,8 +35,27 @@
 }
 .package p {
     line-height: 1.3;
+    margin: 0px;
 }
 .package .content {
     padding: 15px;
     margin-top: -15px;
+}
+
+/*Category labels*/
+.categories {
+    margin-bottom: 10px;
+}
+.categories .category {
+    border: 1px solid white;
+    border-radius: 15px;
+    border-color: var(--swift-color);
+    width: fit-content;
+    font-size: 0.75rem;
+    padding: 4.5px;
+    padding-bottom: 3.5px;
+    margin-top: 10px;
+    margin-right: 5px;
+    float:left;
+
 }

@@ -82,10 +82,11 @@
     </div>
   </main>
   <script>
-    // escaepe html characters, otherwise code blocks can mess up html pages
+    // escape html characters, otherwise code blocks can mess up html pages
     document.querySelectorAll('pre').forEach((pre) => {
       let code = pre.querySelector('code');
       code.innerHTML = code.innerHTML.replace(/</, "&lt;");
+      code.innerHTML = code.innerHTML.replace(/>/, "&gt;");
       console.log(code.innerHTML)
     });
   </script>
