@@ -88,8 +88,6 @@
     document.querySelectorAll('pre').forEach((pre) => {
       let code = pre.querySelector('code');
       code.textContent = code.innerHTML
-      let spans = code.querySelectorAll('*');
-      console.log(spans)
     });
   </script>
 </body>

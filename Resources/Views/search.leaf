@@ -100,7 +100,7 @@
       }
       
       // searches on every key press, needs monitoring if the server can keep up!
-      document.querySelector("#input").addEventListener("keydown", () => { search(socket, input.value, category.value); });
+      document.querySelector("#input").addEventListener("keydown", () => { setTimeout(() => { search(socket, input.value, category.value); }, 500) });
       btn.addEventListener('click', () => { search(socket, input.value, category.value); });
     });
   </script>
