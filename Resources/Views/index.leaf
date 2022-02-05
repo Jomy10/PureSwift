@@ -7,6 +7,7 @@
   <title>Pure Swift</title>
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/package_summary.css">
+  <link rel="stylesheet" href="/css/category_labels.css">
   <script src="/scripts/elipsis.js"></script>
   <style>
     div.intro {
@@ -55,7 +56,14 @@
           <div class="content" onclick="location.href='/package/#(package.title)';">
             <h3>#(package.title)</h3>
             <p class="content-text">#(package.short_desc)</p>
-            <p class="saved-text" style="opacity: 0%;">#(package.short_desc)</p>
+            <p class="saved-text" style="opacity: 0%;">#(package.short_desc)</p><!--Content-text is overwritten with elipsis, while saved-text contains the text so that it can be used on resize-->
+            <div class="categories">
+              #for(category in package.categories):
+                <div class="category">
+                  <p>#(category)</p>
+                </div>
+              #endfor
+            </div>
           </div>
         </div>
       #endfor
@@ -65,7 +73,6 @@
     // Adds an elipsis ('...') when the description of a package overflows
     elipsis()
     window.onresize = () => {
-      console.log('resize');
       elipsis();
     };
 

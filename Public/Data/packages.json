@@ -84,5 +84,12 @@
         "repo": "https://github.com/krisk/fuse-swift",
         "license": ["MIT"],
         "categories": ["Algorithms"]
+    }, {
+        "title": "Carton",
+        "authors": ["Carton contributers"],
+        "short_desc": "📦 Watcher, bundler, and test runner for your SwiftWasm apps",
+        "repo": "https://github.com/swiftwasm/carton",
+        "license": ["Apache-2.0"],
+        "categories": ["WASM"]
     }
 ]
