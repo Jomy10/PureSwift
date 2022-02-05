@@ -52,8 +52,7 @@
     border-color: var(--swift-color);
     width: fit-content;
     font-size: 0.75rem;
-    padding: 4.5px;
-    padding-bottom: 3.5px;
+    padding: 5px 6px 3.5px 6px;
     margin-top: 10px;
     margin-right: 5px;
     float:left;

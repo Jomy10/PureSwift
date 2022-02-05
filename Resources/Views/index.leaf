@@ -7,7 +7,6 @@
   <title>Pure Swift</title>
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/package_summary.css">
-  <link rel="stylesheet" href="/css/category_labels.css">
   <script src="/scripts/elipsis.js"></script>
   <style>
     div.intro {

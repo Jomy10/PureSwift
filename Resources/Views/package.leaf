@@ -81,21 +81,16 @@
       </div>
     </div>
   </main>
+  <script src="/scripts/prism.js"></script>
+
   <script>
     // escape html characters, otherwise code blocks can mess up html pages
     document.querySelectorAll('pre').forEach((pre) => {
       let code = pre.querySelector('code');
-      code.innerHTML = code.innerHTML.replace(/</, "&lt;");
-      code.innerHTML = code.innerHTML.replace(/>/, "&gt;");
-      let spans = code.querySelectorAll('span')
-      spans.forEach((span) => {
-        span.innerHTML.replace(/>/, "&gt;");
-        span.innerHTML.replace(/</, "&lt;");
-      });
-
-      console.log(code.innerHTML)
+      code.textContent = code.innerHTML
+      let spans = code.querySelectorAll('*');
+      console.log(spans)
     });
   </script>
-  <script src="/scripts/prism.js"></script>
 </body>
 </html>

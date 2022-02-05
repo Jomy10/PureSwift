@@ -15,7 +15,7 @@ func parse(readme: String, link: String) -> String {
     let html = HtmlGenerator().generate(doc: markdown)
     // Replace image links
     do {    
-        let modifiedHtml = try replace_img_urls(html: html)
+        let modifiedHtml = try replace_img_urls(html: html, link: link)
         // Replace code class
         let modifiedHtml2 = try replace_code_class(html: modifiedHtml)
 
@@ -25,7 +25,7 @@ func parse(readme: String, link: String) -> String {
     }
 }
 
-func replace_img_urls(html: String) throws -> String {
+func replace_img_urls(html: String, link: String) throws -> String {
     let hrefRegex = try NSRegularExpression(pattern: "src=\"([a-zA-Z.]*)\"")
     let range = NSMakeRange(0, html.count)
     let modString = hrefRegex.stringByReplacingMatches(
