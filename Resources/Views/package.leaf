@@ -87,6 +87,12 @@
       let code = pre.querySelector('code');
       code.innerHTML = code.innerHTML.replace(/</, "&lt;");
       code.innerHTML = code.innerHTML.replace(/>/, "&gt;");
+      let spans = code.querySelectorAll('span')
+      spans.forEach((span) => {
+        span.innerHTML.replace(/>/, "&gt;");
+        span.innerHTML.replace(/</, "&lt;");
+      });
+
       console.log(code.innerHTML)
     });
   </script>
