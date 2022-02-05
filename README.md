@@ -8,4 +8,4 @@ A website listing packages written in pure Swift, or that work in pure Swift (e.
 **Still largely WIP**
 
 ## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
