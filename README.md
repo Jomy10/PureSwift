@@ -5,7 +5,5 @@ A website listing packages written in pure Swift, or that work in pure Swift (e.
 <!--TODO: into button-->
 [Visit the website](https://pureswift.herokuapp.com)
 
-**Still largely WIP**
-
 ## Contributing
 See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
