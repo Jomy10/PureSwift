@@ -36,7 +36,7 @@
 
     <p class="intro">
       Swift is so much more than a language for developping for Apple systems. 
-      Swift has a lot of use cases for scripting in servers. 
+      Swift has a lot of use cases for scripting, servers and WebAssembly. 
       Sadly though, a lot of Swift packages do not work on other platforms.
       This website tries to address these issues by providing an easier search for Swift packages that
       work outside of Apple systems.
