@@ -1,9 +1,11 @@
 {
     "Algorithms": {"desc": "Implementations of core algorithms such as sorting, searching, ..."},
-    "API Bindings": {"desc": "Wrappers around a specific api. Includes HTTP APIs"},
-    "Web": {"desc": "Packages for building (front-end) web apps"},
+    "API Bindings": {"desc": "Wrappers around a specific api. Includes HTTP APIs."},
+    "Web": {"desc": "Packages for building (front-end) web apps".},
     "Server": {"desc": "Packages meant for back-end, server-side programming."},
     "Parsers": {"desc": "Parser implementations for specific formats or languages."},
     "Foundation": {"desc": "Libraries implementing base features."},
-    "WASM": {"desc": "Packages that have something to do with Web Assembly"}
+    "WASM": {"desc": "Packages that have something to do with Web Assembly"},
+    "Games": {"desc": "Packages hat have somthing to do wit games." },
+    "Game Engines": {"desc": "Game engines or support for Swift in game engines." }
 }
