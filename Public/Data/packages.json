@@ -96,6 +96,6 @@
         "authors": ["kelvin13"],
         "short_desc": "swift language support for the godot game engine",
         "repo": "https://github.com/kelvin13/godot-swift",
-        "categories": ["games", "game engines"]
+        "categories": ["Games", "Game Engines"]
     }
 ]
