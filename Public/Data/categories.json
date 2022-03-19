@@ -1,7 +1,7 @@
 {
     "Algorithms": {"desc": "Implementations of core algorithms such as sorting, searching, ..."},
     "API Bindings": {"desc": "Wrappers around a specific api. Includes HTTP APIs."},
-    "Web": {"desc": "Packages for building (front-end) web apps".},
+    "Web": {"desc": "Packages for building (front-end) web apps."},
     "Server": {"desc": "Packages meant for back-end, server-side programming."},
     "Parsers": {"desc": "Parser implementations for specific formats or languages."},
     "Foundation": {"desc": "Libraries implementing base features."},
